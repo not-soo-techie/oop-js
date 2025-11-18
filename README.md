@@ -10,22 +10,22 @@ Company System.
 
 At the end, your code should pass a given set of behavioral tests.
 
-# **✅ What You Will Build** {#what-you-will-build}
+# **✅ What You Will Build**
 
 You must implement the following classes:
 
-### **1. Employee (Base class)** {#employee-base-class}
+### **1. Employee (Base class)**
 
 ### **2. RegularEmployee (Child class)** {#regularemployee-child-class}
 
-### **3. Manager (Child class)** {#manager-child-class}
+### **3. Manager (Child class)**
 
-### **4. CompanySystem (Aggregator class to store employees)** {#companysystem-aggregator-class-to-store-employees}
+### **4. CompanySystem (Aggregator class to store employees)**
 
 Your output must behave exactly like a real-world employee management
 module.
 
-# **🚀 Learning Objectives** {#learning-objectives}
+# **🚀 Learning Objectives**
 
 This lab tests your understanding of:
 
@@ -184,7 +184,7 @@ Print the names of all employees.
 You should write your classes so that the following test script produces
 the correct output:
 
-### **1. Create Regular Employees** {#create-regular-employees}
+### **1. Create Regular Employees**
 
 const e1 = new RegularEmployee(\"Alice\", 28, \"IT\", 60000, 85);
 
@@ -194,11 +194,11 @@ const e3 = new RegularEmployee(\"Charlie\", 25, \"HR\", 48000, 92);
 
 const e4 = new RegularEmployee(\"Daisy\", 30, \"Marketing\", 52000, 65);
 
-### **2. Create Manager** {#create-manager}
+### **2. Create Manager**
 
 const m1 = new Manager(\"Edward\", 45, \"IT\", 12);
 
-### **3. Add employees to the company** {#add-employees-to-the-company}
+### **3. Add employees to the company**
 
 const company = new CompanySystem();
 
@@ -264,7 +264,7 @@ company.getHighestSalaryEmployee();
 company.getTopPerformers(80);
 ```
 
-# **📝 Submission Requirements** {#submission-requirements}
+# **📝 Submission Requirements**
 
 You must submit:
 
@@ -284,8 +284,8 @@ You must submit:
 
 - method overriding
 
-# **🎉 You\'re Done!** {#youre-done}
+# **🎉 You\'re Done!**
 
 This lab gives you hands-on experience with **real OOP features in
-JavaScript** --- the same concepts used in production systems and
+JavaScript** - the same concepts used in production systems and
 backend class modeling.
