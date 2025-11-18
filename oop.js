@@ -1,4 +1,4 @@
-// ================= EMPLOYEE (Base Class) =================
+//EMPLOYEE (Base Class)
 class Employee {
     #salary;
     #performanceScore;
@@ -30,7 +30,7 @@ class Employee {
 
 
 
-// ================= REGULAR EMPLOYEE =================
+//REGULAR EMPLOYEE
 
 class RegularEmployee extends Employee {
 
@@ -53,7 +53,7 @@ class RegularEmployee extends Employee {
 
 
 
-// ================= MANAGER =================
+//MANAGER
 
 class Manager extends Employee {
     constructor(name, age, department, teamSize) {
@@ -68,7 +68,7 @@ class Manager extends Employee {
 
 
 
-// ================= COMPANY SYSTEM =================
+//COMPANY SYSTEM
 
 class CompanySystem {
     constructor() {
