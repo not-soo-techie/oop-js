@@ -1,3 +1,121 @@
+class Employee{
+    constructor(name, age, department){
+        this.name = name;
+        this.age = age;
+        this.department = department;
+    }
+    introduce(){
+        console.log(`Hi, I'm ${this.name} from the ${this.department} department.`);
+    }
+}
+
+class RegularEmployee extends Employee {
+    static count = 0;
+    #salary;
+    #performanceScore;
+    constructor(name, age, department, salary, performanceScore){
+        super(name, age, department);
+        this.#salary = salary;
+        this.#performanceScore = performanceScore;
+
+        RegularEmployee.count++;
+    }
+    updatePerformance(score){
+        if (score < 0 || score > 100){
+            console.log("Invalid score! Must be between 0 and 100.");
+            return;
+        }
+        this.#performanceScore = score;
+    }
+
+    increaseSalary(amount){
+        if (amount <= 0) {
+            console.log("Amount must be positive.");
+            return;
+        }
+        this.#salary += amount;
+    }
+
+    getSalary(){
+        return this.#salary;
+    }
+
+    getScore(){
+        return this.#performanceScore;
+    }
+
+    get details(){
+        return `Employee ${this.name}, Dept: ${this.department}, Salary: ${this.#salary}, Performance: ${this.#performanceScore}`;
+    }
+
+    static comparePerformance(e1, e2){
+        if (e1.getScore() > e2.getScore()){
+            return `${e1.name} has better performance`;
+        } 
+        else if (e1.getScore() < e2.getScore()){
+            return `${e2.name} has better performance`;
+        }
+        return "Both employees have equal performance";
+    }
+}
+
+class Manager extends Employee {
+    constructor(name, age, department, teamSize){
+        super(name, age, department);
+        this.teamSize = teamSize;
+    }
+    introduce(){
+        console.log(
+            `Manager ${this.name} oversees a team of ${this.teamSize} people in ${this.department}.`
+        );
+    }
+}
+
+class CompanySystem {
+    constructor() {
+        this.employees = [];
+    }
+
+    addEmployee(emp){
+        if (emp instanceof Employee) {
+            this.employees.push(emp);
+        } else {
+            console.log("Only Employee objects allowed!");
+        }
+    }
+
+    removeEmployee(name){
+        const index = this.employees.findIndex(e => e.name === name);
+        if (index !== -1) {
+            this.employees.splice(index, 1);
+            return true;
+        }
+        return false;
+    }
+
+    getTopPerformers(minScore){
+        return this.employees
+            .filter(e => e instanceof RegularEmployee && e.getScore() >= minScore)
+            .map(e => e.name);
+    }
+
+    getHighestSalaryEmployee(){
+        const regulars = this.employees.filter(e => e instanceof RegularEmployee);
+        if (regulars.length === 0) return null;
+
+        return regulars.reduce((max, curr) =>
+            curr.getSalary() > max.getSalary() ? curr : max
+        );
+    }
+
+    listEmployees(){
+        this.employees.forEach(e => {
+            console.log(e.name);
+        });
+    }
+}
+
+
 // ======== TESTING ========
 
 // Step 1: Create RegularEmployee
