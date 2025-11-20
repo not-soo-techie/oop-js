@@ -117,6 +117,7 @@ class CompanySystem {
 
 
 // ======== TESTING ========
+const { Employee, RegularEmployee, Manager, CompanySystem } = require('./employee.js');
 
 // Step 1: Create RegularEmployee
 // name, age, department, salary, performanceScore
@@ -180,3 +181,4 @@ console.log(highestSalary.details);
 // Step 14: Company - Top Performer
 console.log("\n--- Top Performers (score ≥ 80) ---");
 console.log(company.getTopPerformers(80));
+
